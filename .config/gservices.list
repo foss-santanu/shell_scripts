@@ -1,0 +1,21 @@
+###Google API Service names
+google_analytics=analytics
+google_apps=apps
+#Google Sites Data API	jotspot
+blogger=blogger
+#Book Search Data API	print
+calendar=cl
+google_code=codesearch
+contacts=cp
+#Content API for Shopping	structuredcontent
+#Documents List Data API	writely
+#Finance Data API	finance
+gmail=mail
+#Health Data API	health
+#weaver (H9 sandbox)
+maps=local
+picasa=lh2
+#Sidewiki Data API	annotateweb
+#Spreadsheets Data API	wise
+#Webmaster Tools API	sitemaps
+youtube=youtube
