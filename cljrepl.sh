@@ -2,6 +2,19 @@
 #created by Santanu Chakrabarti
 #created on 07/04/2015
 #Start script code ----
+
+## function to run nrepl/repl
+run_gradle () {
+    tasks=`gradle tasks`
+    ## lookup for the gradle task
+    if [ "${tasks/$1}" != "$tasks" ]; then
+    gradle $1
+    else
+    echo "No task to run REPL found"
+    exit 1
+    fi
+}
+
 cwd=`pwd`
 rundir=$cwd
 until [ -e "$rundir/build.gradle" ]
@@ -22,13 +35,7 @@ echo "cljrepl not properly installed: .cljrepl.d missing"
 exit 1
 else
 cd $rundir
-tasks=`gradle tasks`
-## check if task clojureRepl exists then run it
-if [ "${tasks/clojureRepl}" != "$tasks" ]; then
-gradle clojureRepl
-else
-echo "No task to run REPL found"
-fi
+run_gradle $1
 fi
 cd $cwd
 #----End script code
